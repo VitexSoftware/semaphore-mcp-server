@@ -1,4 +1,4 @@
 #!/bin/sh
 set -e
 semaphore-mcp --help || true
-python3 -c "from src.semaphore_mcp_server import mcp; print('import OK')"
+python3 -c "from semaphore_mcp.semaphore_mcp_server import mcp; print('import OK')"

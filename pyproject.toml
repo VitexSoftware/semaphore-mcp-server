@@ -23,7 +23,7 @@ classifiers = [
 ]
 dependencies = [
     "fastmcp>=2.0.0",
-    "semaphore-client",
+    "python-semaphore-client",
     "python-dotenv>=1.0.0",
 ]
 requires-python = ">=3.10"
@@ -34,14 +34,14 @@ Repository = "https://github.com/VitexSoftware/semaphore-mcp-server"
 Issues = "https://github.com/VitexSoftware/semaphore-mcp-server/issues"
 
 [project.scripts]
-semaphore-mcp = "src.semaphore_mcp_server:main"
+semaphore-mcp = "semaphore_mcp.semaphore_mcp_server:main"
 
 [build-system]
 requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["src"]
+packages = ["semaphore_mcp"]
 
 [tool.setuptools.package-data]
-src = ["*.py"]
+semaphore_mcp = ["*.py"]
