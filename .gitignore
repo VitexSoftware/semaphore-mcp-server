@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Environment files
+.env
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Debian packaging
+.debhelper/
+.pybuild/
+debian/files
+debian/semaphore-mcp-server.postinst.debhelper
+debian/semaphore-mcp-server.prerm.debhelper
+debian/semaphore-mcp-server/
+debian/semaphore-mcp-server.substvars
+debian/debhelper-build-stamp

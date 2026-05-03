@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+  <id>cz.vitexsoftware.semaphore-mcp-server</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Semaphore MCP Server</name>
+  <summary>Model Context Protocol server for Semaphore UI integration</summary>
+  <description>
+    <p>
+      A comprehensive MCP server providing complete access to Semaphore UI API
+      functionality through the Model Context Protocol, enabling AI assistants
+      and other tools to interact with Semaphore automation platform.
+    </p>
+    <p>Features include:</p>
+    <ul>
+      <li>Project, template, task, and inventory management</li>
+      <li>Repository and environment management</li>
+      <li>SSH key and schedule management</li>
+      <li>Task launching, stopping, and output retrieval</li>
+      <li>User and event management</li>
+      <li>Server status and health monitoring</li>
+      <li>Support for both STDIO and HTTP transports</li>
+    </ul>
+  </description>
+  <icon type="stock">semaphore-mcp-server</icon>
+  <categories>
+    <category>Development</category>
+    <category>System</category>
+  </categories>
+  <provides>
+    <binary>semaphore-mcp</binary>
+  </provides>
+  <url type="homepage">https://github.com/VitexSoftware/semaphore-mcp-server</url>
+  <url type="bugtracker">https://github.com/VitexSoftware/semaphore-mcp-server/issues</url>
+  <url type="vcs-browser">https://github.com/VitexSoftware/semaphore-mcp-server</url>
+  <developer id="cz.vitexsoftware">
+    <name>Vítězslav Dvořák</name>
+  </developer>
+  <releases>
+    <release version="0.1.0" date="2025-05-03">
+      <description>
+        <p>Initial release with 35 tools covering full Semaphore UI API.</p>
+      </description>
+    </release>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

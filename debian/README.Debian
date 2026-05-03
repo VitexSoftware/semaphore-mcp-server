@@ -1,0 +1,14 @@
+semaphore-mcp-server for Debian
+
+Configuration:
+  Set SEMAPHORE_URL and SEMAPHORE_TOKEN environment variables, or create
+  a .env file in the working directory.
+
+  Example:
+    export SEMAPHORE_URL=https://your-semaphore-instance.example.com
+    export SEMAPHORE_TOKEN=your-api-token
+
+Usage:
+  semaphore-mcp
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Sun, 03 May 2026 21:21:15 +0200

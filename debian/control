@@ -1,0 +1,37 @@
+Source: semaphore-mcp-server
+Section: python
+Priority: optional
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-python,
+ pybuild-plugin-pyproject,
+ python3-all,
+ python3-setuptools,
+Standards-Version: 4.7.0
+Homepage: https://github.com/VitexSoftware/semaphore-mcp-server
+Rules-Requires-Root: no
+Vcs-Git: https://github.com/VitexSoftware/semaphore-mcp-server.git
+Vcs-Browser: https://github.com/VitexSoftware/semaphore-mcp-server
+
+Package: semaphore-mcp-server
+Architecture: all
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+ python3-fastmcp (>= 2.0.0),
+ python3-semaphore-client,
+ python3-dotenv (>= 1.0.0),
+Description: Model Context Protocol server for Semaphore UI integration
+ A comprehensive MCP server providing complete access to Semaphore UI API
+ functionality through the Model Context Protocol, enabling AI assistants
+ and other tools to interact with Semaphore automation platform.
+ .
+ Features include:
+  * Project, template, task, and inventory management
+  * Repository and environment management
+  * SSH key and schedule management
+  * Task launching, stopping, and output retrieval
+  * User and event management
+  * Server status and health monitoring
+  * Support for both STDIO and HTTP transports

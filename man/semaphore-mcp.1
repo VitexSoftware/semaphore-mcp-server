@@ -1,0 +1,205 @@
+.\" Manpage for semaphore-mcp
+.TH SEMAPHORE-MCP 1 "May 2025" "semaphore-mcp-server 0.1.0" "User Commands"
+.SH NAME
+semaphore-mcp \- Model Context Protocol server for Semaphore UI
+.SH SYNOPSIS
+.B semaphore-mcp
+.SH DESCRIPTION
+.B semaphore-mcp
+is a Model Context Protocol (MCP) server that provides AI assistants and
+MCP-compatible tools with access to the Semaphore UI API for managing
+Ansible, Terraform, and other automation workflows.
+.PP
+The server communicates over standard input/output using the MCP protocol
+and exposes 35 tools for interacting with a Semaphore UI instance.
+.SH ENVIRONMENT
+.TP
+.B SEMAPHORE_URL
+Base URL of the Semaphore UI instance (e.g., \fIhttp://localhost:3000\fR).
+Required.
+.TP
+.B SEMAPHORE_TOKEN
+API Bearer token for authentication. Required.
+Create one via Semaphore UI user settings or the API.
+.TP
+.B READ_ONLY
+Set to \fBfalse\fR to enable write operations (create, delete).
+Default: \fBtrue\fR.
+.TP
+.B DEBUG
+Set to \fBtrue\fR for verbose logging output. Optional.
+.SH TOOLS
+The server exposes the following MCP tools:
+.SS "Project Management"
+.TP
+.B project_list
+List all projects accessible to the user.
+.TP
+.B project_get
+Get details of a specific project.
+.TP
+.B project_create
+Create a new project.
+.TP
+.B project_delete
+Delete a project.
+.SS "Task Management"
+.TP
+.B task_list
+List tasks in a project.
+.TP
+.B task_get
+Get task details.
+.TP
+.B task_launch
+Launch a task from a template.
+.TP
+.B task_stop
+Stop a running task.
+.TP
+.B task_output
+Get task output/log.
+.TP
+.B task_delete
+Delete a task.
+.SS "Template Management"
+.TP
+.B template_list
+List templates in a project.
+.TP
+.B template_get
+Get template details.
+.TP
+.B template_create
+Create a new template.
+.TP
+.B template_delete
+Delete a template.
+.SS "Inventory Management"
+.TP
+.B inventory_list
+List inventories in a project.
+.TP
+.B inventory_get
+Get inventory details.
+.TP
+.B inventory_create
+Create a new inventory.
+.TP
+.B inventory_delete
+Delete an inventory.
+.SS "Repository Management"
+.TP
+.B repository_list
+List repositories in a project.
+.TP
+.B repository_get
+Get repository details.
+.TP
+.B repository_create
+Create a new repository.
+.TP
+.B repository_delete
+Delete a repository.
+.SS "Environment Management"
+.TP
+.B environment_list
+List environments in a project.
+.TP
+.B environment_get
+Get environment details.
+.TP
+.B environment_create
+Create a new environment.
+.TP
+.B environment_delete
+Delete an environment.
+.SS "Key Store"
+.TP
+.B key_list
+List keys/credentials in a project.
+.TP
+.B key_get
+Get key details.
+.TP
+.B key_delete
+Delete a key.
+.SS "Schedule Management"
+.TP
+.B schedule_list
+List schedules in a project.
+.TP
+.B schedule_create
+Create a new schedule.
+.TP
+.B schedule_delete
+Delete a schedule.
+.SS "User & Events"
+.TP
+.B user_get_current
+Get current user info.
+.TP
+.B user_tokens
+List user API tokens.
+.TP
+.B event_list
+List project events.
+.SS "Server"
+.TP
+.B server_info
+Get server version and information.
+.TP
+.B server_ping
+Check server connectivity.
+.SH CONFIGURATION FILES
+The server reads environment variables from a \fI.env\fR file in the current
+working directory if present.
+.SH EXIT STATUS
+.TP
+.B 0
+Successful termination.
+.TP
+.B 1
+Error (e.g., missing configuration, connection failure).
+.SH EXAMPLES
+Run the server with environment variables:
+.PP
+.nf
+SEMAPHORE_URL=http://localhost:3000 \\
+SEMAPHORE_TOKEN=your-token \\
+semaphore-mcp
+.fi
+.PP
+Use with Claude Desktop (claude_desktop_config.json):
+.PP
+.nf
+{
+  "mcpServers": {
+    "semaphore": {
+      "command": "semaphore-mcp",
+      "env": {
+        "SEMAPHORE_URL": "http://localhost:3000",
+        "SEMAPHORE_TOKEN": "your-token"
+      }
+    }
+  }
+}
+.fi
+.SH SEE ALSO
+.UR https://github.com/VitexSoftware/semaphore-mcp-server
+Project homepage
+.UE ,
+.UR https://github.com/VitexSoftware/python3-semaphore-client
+Semaphore Python client library
+.UE ,
+.UR https://semaphoreui.com/
+Semaphore UI
+.UE
+.SH BUGS
+Report bugs at:
+.UR https://github.com/VitexSoftware/semaphore-mcp-server/issues
+.UE
+.SH AUTHOR
+Vítězslav Dvořák <info@vitexsoftware.cz>
+.SH LICENSE
+MIT License
