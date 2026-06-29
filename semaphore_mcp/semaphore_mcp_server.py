@@ -404,6 +404,7 @@ def template_create(
     arguments: Optional[str] = None,
     allow_override_args_in_task: bool = False,
     suppress_success_alerts: bool = False,
+    app: str = "ansible",
 ) -> str:
     """Create a new template (job template).
 
@@ -418,6 +419,7 @@ def template_create(
         arguments: Extra CLI arguments as JSON array string (optional).
         allow_override_args_in_task: Allow overriding arguments per task.
         suppress_success_alerts: Suppress alerts on success.
+        app: Application type ("ansible", "terraform", "tofu"). Defaults to "ansible".
 
     Returns:
         JSON object with the created template details.
@@ -436,6 +438,7 @@ def template_create(
         allow_override_args_in_task=allow_override_args_in_task,
         suppress_success_alerts=suppress_success_alerts,
         project_id=project_id,
+        app=app,
     )
     template = api.project_project_id_templates_post(
         project_id=project_id, template_request=request
