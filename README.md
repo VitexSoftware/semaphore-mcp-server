@@ -1,6 +1,7 @@
 # Semaphore MCP Server
 
 ![Semaphore MCP Server](semaphore-mcp-server.svg?raw=true)
+![Packaging: deb](https://img.shields.io/badge/packaging-.deb-red?logo=debian&logoColor=white)
 
 A Model Context Protocol (MCP) server for [Semaphore UI](https://semaphoreui.com/) - the modern open-source alternative to Ansible Tower/AWX.
 
