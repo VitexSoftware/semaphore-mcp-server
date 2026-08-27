@@ -35,3 +35,14 @@ Description: Model Context Protocol server for Semaphore UI integration
   * User and event management
   * Server status and health monitoring
   * Support for both STDIO and HTTP transports
+
+Package: mcprack-mcp-server-semaphore
+Architecture: all
+Depends:
+ ${misc:Depends},
+ mcprack (>= 1.5.1),
+ semaphore-mcp-server (= ${binary:Version}),
+Description: Registers Semaphore UI MCP server into mcprack catalog
+ Companion package for semaphore-mcp-server. Installing it registers
+ the semaphore-mcp binary as an available MCP server in the local
+ mcprack instance; removing it unregisters it again.

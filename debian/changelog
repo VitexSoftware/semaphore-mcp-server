@@ -2,5 +2,8 @@ semaphore-mcp-server (0.1.0) UNRELEASED; urgency=low
 
   * Initial release. Closes: #nnnn
     <nnnn is the bug number of your ITP>
+  * Add companion package mcprack-mcp-server-semaphore: registers
+    semaphore-mcp-server into the local mcprack MCP catalog on install
+    (postinst) and unregisters it on removal (prerm).
 
  -- Vítězslav Dvořák <info@vitexsoftware.cz>  Sun, 03 May 2026 21:21:15 +0200
